@@ -1,20 +1,19 @@
-# Use an official Node.js LTS (Long Term Support) image as the base
-FROM node:lts-alpine
+# Use a base image with your desired programming language and version
+# For example, if you're using Node.js, you can use the official Node.js image
+FROM node:14
 
-# Set a custom working directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+# Copy the backend source code to the container's working directory
+COPY . /app
 
-# Install the dependencies
-RUN npm install 
 
-# Copy the rest of the application code to the working directory
-COPY . .
+# Install dependencies
+RUN npm install
 
-# Expose the default Node.js port (4000)
-EXPOSE 4000
+# Expose the port on which your backend application will run
+EXPOSE 5000
 
-# Start the Node.js application
-CMD [ "node", "index.js" ]
+# Command to start the backend application
+CMD ["npm", "start"]
