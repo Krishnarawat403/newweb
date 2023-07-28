@@ -13,7 +13,7 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Expose the default Node.js port (4000)
+# Expose the default Node.js port (3000)
 EXPOSE 3000
 
 # Start the Node.js application
