@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose the default Node.js port (4000)
-EXPOSE 4000
+EXPOSE 3000
 
 # Start the Node.js application
 CMD [ "node", "index.js" ]
